@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-s cale=1.0">
+    <title>King Ola and Friends - Inspiring African Leaders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #004d40;
+            --secondary-color: #ffb74d;
+            --background-light: #f4f7f9;
+            --text-dark: #333;
+            --text-light: #fff;
+            --font-poppins: 'Poppins', sans-serif;
+        }
+
+        /* Basic Reset and Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-poppins);
+            line-height: 1.6;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .logo:hover {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0;
+            text-align: center;
+            color: var(--text-light);
+            
+            /* Background Image Styling */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('herobg.jpg'); /* Replace this URL with your chosen background image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            margin-top: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            margin: 0 0.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            background-color: #ffa726;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        section p.subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: #555;
+        }
+
+        /* About & Why You'll Love It */
+        .about-series, .why-love {
+            background-color: #fff;
+        }
+
+        .card-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: var(--background-light);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Who Can Benefit Section */
+        .who-benefit {
+            background-color: #fff;
+        }
+
+        .benefit-list {
+            list-style: none;
+            text-align: left;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .benefit-list li {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-list li i {
+            color: var(--primary-color);
+            margin-right: 1rem;
+        }
+
+        /* Referral & Testimonials */
+        .referral, .testimonials {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .referral h2, .testimonials h2 {
+            color: var(--secondary-color);
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 700px;
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .testimonial-card i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+        
+        .testimonial-card p {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card .author {
+            font-weight: 600;
+            text-align: right;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        /* Footer & Contact */
+        footer {
+            background-color: #f4f7f9; /* Changed to a light background */
+            color: var(--text-dark); /* Dark text for readability */
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--primary-color); /* Primary color for footer links */
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            margin-top: 1.5rem;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #ccc;
+            padding-top: 1rem;
+            color: #555;
+        }
+
+        .designer-credit {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .designer-credit img {
+            height: 30px;
+            margin-left: 0.5rem;
+        }
+
+        /* Floating Icon */
+        .floating-icon-container {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            z-index: 1000;
+        }
+        
+        .floating-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .floating-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .floating-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .card-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                max-width: 100%;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-icon-container">
+        <a href="https://www.talentronaut.in/" target="_blank" class="floating-icon" aria-label="Visit Talentronauts">
+            <img src="logo.jpg" alt="Talentronauts Logo">
+        </a>
+    </div>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo">King Ola and Friends</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#why">Why Love It</a></li>
+                    <li><a href="#who">Who Can Benefit</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>King Ola and Friends</h1>
+            <p>Inspiring the Next Generation of African Leaders Through Stories</p>
+            <div class="cta-buttons">
+                <a href="#how-to-buy" class="btn">Order Now</a>
+                <a href="#contact" class="btn" style="background-color: transparent; border: 2px solid var(--secondary-color); color: var(--secondary-color);">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="about-series" id="about">
+            <div class="container">
+                <h2>About the Series</h2>
+                <p class="subtitle">A beautifully illustrated African children’s storybook series for mental, moral, and cultural development.</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Spark Imagination</h3>
+                        <p>Follow the adventures of Ola, Ada, Musa, and their loyal dog Bingo as they explore new worlds and ideas.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Teach Timeless Values</h3>
+                        <p>Each story is a lesson in courage, friendship, wisdom, and the importance of cultural heritage.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Encourage Reading</h3>
+                        <p>Designed to be engaging and fun, fostering a lifelong love for reading in children aged 5-10.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-love" id="why">
+            <div class="container">
+                <h2>Why Schools, Parents & Organizations Love It</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>Perfect for Classrooms</h3>
+                        <p>Engaging reading that supports literacy and moral lessons for students.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-home"></i>
+                        <h3>Family-Friendly</h3>
+                        <p>Parents love sharing these stories at home, creating meaningful family time.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Educational Value</h3>
+                        <p>Promotes African history, culture, and leadership ideals in a fun and accessible way.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-book"></i>
+                        <h3>Great for Libraries</h3>
+                        <p>A must-have for reading clubs, bookstores, and child-oriented NGOs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="who-benefit" id="who">
+            <div class="container">
+                <h2>Who Can Benefit?</h2>
+                <p class="subtitle">Our books are a perfect fit for a variety of partners who want to empower children.</p>
+                <ul class="benefit-list">
+                    <li><i class="fas fa-check-circle"></i> <strong>Schools & Educators</strong> – Bring African-centered stories to your students.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Parents</strong> – Give your child books that entertain and empower.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Booksellers & Distributors</strong> – Stock a fast-moving, high-demand series.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Children-Focused Organizations</strong> – Use as learning tools or gifts for outreach programs.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="referral">
+            <div class="container">
+                <h2>Referral Bonus</h2>
+                <h3>Earn 10%</h3>
+                <p>Spread the word, share the stories! Earn a <strong>10% referral bonus</strong> for every confirmed order you bring in.</p>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2>What People Are Saying</h2>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"My pupils can’t get enough of King Ola and Friends. It’s their favorite storytime book!"</p>
+                    <span class="author">– Mrs Okogie</span>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Finally, African kids see themselves as kings and heroes. Every parent should get this."</p>
+                    <span class="author">– Mr Amos</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-to-buy" id="how-to-buy">
+            <div class="container">
+                <h2>How to Get the Books</h2>
+                <p class="subtitle">Simple purchase and delivery across Nigeria and beyond.</p>
+                <p><strong>Bulk orders</strong> available for schools, distributors, and organizations.</p>
+                <p><strong>Individual copies</strong> for parents and gift-givers.</p>
+                <a href="mailto:fred.lawanson@gmail.com" class="btn">Order Now</a>
+                <div class="contact-info">
+                    <p>Or call us to place your order:</p>
+                    <a href="tel:+2348032432390">+2348032432390</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2>Be Part of the Movement</h2>
+                <p class="subtitle">Give children stories that shape their future. Join the *King Ola and Friends* family today.</p>
+                <a href="#how-to-buy" class="btn">Get Started Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <h3>King Ola and Friends</h3>
+            <p>Fred Lawanson, Author</p>
+            <p>Email: <a href="mailto:fred.lawanson@gmail.com">fred.lawanson@gmail.com</a></p>
+            <p>Phone: <a href="tel:+2348032432390">+2348032432390</a></p>
+            <div class="footer-bottom">
+                <p>&copy; 2023 King Ola and Friends. All Rights Reserved.</p>
+                <div class="designer-credit">
+                    <span>Designed by <a href="https://www.talentronaut.in/" target="_blank">Talentronauts Technologies</a></span>
+                    <a href="https://www.talentronaut.in/" target="_blank">
+                        <img src="logo.jpg" alt="Talentronauts Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for menu links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
